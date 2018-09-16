@@ -1,0 +1,5 @@
+traject_groen = set(['Boxtel', 'Best', 'Beukenlaan', 'Eindhoven', 'Geldrop', 'Heeze', 'Weert'])
+traject_bruin = set(['Boxtel', 'Best', 'Beukenlaan', 'Eindhoven', 'Helmond \'t Hout', 'Helmond', 'Helmond Brouwhuis', 'Deurne'])
+print(traject_bruin.intersection(traject_groen))
+print(traject_bruin.difference(traject_groen))
+print(traject_bruin.union(traject_groen))
