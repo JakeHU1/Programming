@@ -27,9 +27,6 @@ while True:
     except Exception:
         print('Voer een geldige leeftijd in')
 
-
-
-
 while True:
         weekendrit = input('Is deze rit in het weekend? (ja of nee) ')
         if weekendrit == 'ja' or weekendrit == 'nee':

@@ -6,7 +6,7 @@ def try_int(x):
         return False
 
 def toon_aantal_kluizen_vrij(): #deze funtie leest het textbestand uit en checkt hoeveel regels de textfile bevat. Vervolgens worden de beschikbare nummers uitgeprint
-    file = open('/Users\Jake\Desktop\kluizen.txt', "r+")
+    file = open('/Users\jake1\OneDrive\Bureaublad/kluizen.txt', "r+")
     kluizen_vrij = 0
     lines = file.readlines()
     for line in lines:
@@ -16,7 +16,7 @@ def toon_aantal_kluizen_vrij(): #deze funtie leest het textbestand uit en checkt
 
 def nieuwe_kluis(): #deze funtie controleert welke kluizen vrij zijn. Vervolgens kan de klant een wachtwoord opgeven en wordt het kluisnummer toegewezen
     kluisnummers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
-    file = open('/Users\Jake\Desktop\kluizen.txt', "r+")
+    file = open('/Users\jake1\OneDrive\Bureaublad/kluizen.txt', "r+")
     lines = file.readlines()
     file.close()
     for line in lines:
@@ -34,12 +34,12 @@ def nieuwe_kluis(): #deze funtie controleert welke kluizen vrij zijn. Vervolgens
                 print('de wachtwoorden komen niet overheen, probeer het nogmaals')
     else:
         print('helaas zijn alle kluizen bezet')
-    file = open('/Users\Jake\Desktop\kluizen.txt', "a+")
+    file = open('/Users\jake1\OneDrive\Bureaublad/kluizen.txt', "a+")
     file.write('\n' + str(kluisnummers[0]) + ';' + str(wachtwoord))
     file.close()
 
 def kluis_openen():
-    file = open('/Users\Jake\Desktop\kluizen.txt', "r+")
+    file = open('/Users\jake1\OneDrive\Bureaublad/kluizen.txt', "r+")
     lines = file.readlines()
     file.close()
     kluisnummer = input('Geef het kluisnummer: ')
@@ -54,11 +54,11 @@ def kluis_openen():
     print('Wij hebben uw kluis niet kunnen openen met de verkregen gegevens.')
 
 def kluis_teruggeven():
-    file = open('/Users\Jake\Desktop\kluizen.txt', "r+")
+    file = open('/Users\jake1\OneDrive\Bureaublad/kluizen.txt', "r+")
     lines = file.readlines()
     file.close()
     while True:
-        file = open('/Users\Jake\Desktop\kluizen.txt', "w")
+        file = open('/Users\jake1\OneDrive\Bureaublad/kluizen.txt', "w")
         kluisnummer = input('Geef het kluisnummer: ')
         if kluisnummer == 'stop':
             for line in lines:
