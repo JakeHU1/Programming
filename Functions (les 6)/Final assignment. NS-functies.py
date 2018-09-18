@@ -28,12 +28,14 @@ while True:
         print('Voer een geldige leeftijd in')
 
 
-weekendrit = input('Is deze rit in het weekend? (ja of nee) ')
 
-while weekendrit != "ja" and weekendrit != "nee":
-        weekendrit = None
-        print('vul ja of nee in')
-        weekendrit = str(input('Is deze rit in het weekend? (ja of nee) '))
+
+while True:
+        weekendrit = input('Is deze rit in het weekend? (ja of nee) ')
+        if weekendrit == 'ja' or weekendrit == 'nee':
+            break
+        else:
+            print('Vul ja of nee in')
 
 if weekendrit == 'ja':
     weekendrit = True
