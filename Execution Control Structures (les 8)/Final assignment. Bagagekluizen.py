@@ -5,7 +5,8 @@ def try_int(x):
     except ValueError:
         return False
 
-def toon_aantal_kluizen_vrij(): #deze funtie leest het textbestand uit en checkt hoeveel regels de textfile bevat. Vervolgens worden de beschikbare nummers uitgeprint
+def toon_aantal_kluizen_vrij():
+    'deze funtie leest het textbestand uit en checkt hoeveel regels de textfile bevat. Vervolgens worden de beschikbare nummers uitgeprint'
     file = open('/Users\jake1\OneDrive\Bureaublad/kluizen.txt', "r+")
     kluizen_vrij = 0
     lines = file.readlines()
@@ -14,7 +15,8 @@ def toon_aantal_kluizen_vrij(): #deze funtie leest het textbestand uit en checkt
     print('Aantal kluizen vrij: ' + str(int(20 - kluizen_vrij)))
     file.close()
 
-def nieuwe_kluis(): #deze funtie controleert welke kluizen vrij zijn. Vervolgens kan de klant een wachtwoord opgeven en wordt het kluisnummer toegewezen
+def nieuwe_kluis():
+    'deze funtie controleert welke kluizen vrij zijn. Vervolgens kan de klant een wachtwoord opgeven en wordt het kluisnummer toegewezen'
     kluisnummers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
     file = open('/Users\jake1\OneDrive\Bureaublad/kluizen.txt', "r+")
     lines = file.readlines()
@@ -39,6 +41,7 @@ def nieuwe_kluis(): #deze funtie controleert welke kluizen vrij zijn. Vervolgens
     file.close()
 
 def kluis_openen():
+    'Deze functie opent de kluis van de gebruiker en toont eventueel de inhoud ervan'
     file = open('/Users\jake1\OneDrive\Bureaublad/kluizen.txt', "r+")
     lines = file.readlines()
     file.close()
@@ -54,6 +57,7 @@ def kluis_openen():
     print('Wij hebben uw kluis niet kunnen openen met de verkregen gegevens.')
 
 def kluis_teruggeven():
+    'Deze functie vraagt de gebruiker in te loggen om de kluis terug te geven'
     file = open('/Users\jake1\OneDrive\Bureaublad/kluizen.txt', "r+")
     lines = file.readlines()
     file.close()

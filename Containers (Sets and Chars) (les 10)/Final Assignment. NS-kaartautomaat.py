@@ -1,4 +1,5 @@
 def inlezen_beginstation(stations):
+    'Vraagt de gebruiker wat het beginstation is. Als deze niet in traject voorkomt, foutmelding'
     while True:
         beginstation = input('Wat is je beginstation? ')
         for i in stations:
@@ -7,6 +8,7 @@ def inlezen_beginstation(stations):
         print('Deze trein komt niet in ' + beginstation)
 
 def inlezen_eindstation(stations, beginstation):
+    'Vraagt de gebruiker om het eindstation. Als deze niet meer op het traject voorkomt, foutmelding'
     while True:
         eindstation = input('Wat is je eindstation? ')
         try:
@@ -19,6 +21,7 @@ def inlezen_eindstation(stations, beginstation):
         except ValueError:
             print('Dit station komt niet voor op dit traject.')
 def omroepen_reis(stations, beginstation, eindstation):
+    'Toont de gebruiker de rest van de rit en waar de gebruiker uit moet stappen'
     print(beginstation + ' is het ' + str(stations.index(beginstation)+1) + 'e station in het traject')
     print(eindstation + ' is het ' + str(stations.index(eindstation) + 1) + 'e station in het traject')
     print('de afstand bedraagt ' + str(int(stations.index(eindstation) - int(stations.index(beginstation)))) + ' station(s).')
