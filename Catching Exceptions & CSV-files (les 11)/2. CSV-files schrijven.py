@@ -13,6 +13,6 @@ with open('inloggers.csv', 'w', newline='') as myCSVFile:
         voorl = input("Wat zijn je voorletters? ")
         gbdatum = input("Wat is je geboortedatum? ")
         email = input("Wat is je e-mail adres? ")
-        writer.writerow((((naam, voorl, gbdatum, email))))
+        writer.writerow((naam, voorl, gbdatum, email))
 
 #wanneer de volgende persoon inlogt is onbekend, dus schrijf meteen naar file
