@@ -1,8 +1,7 @@
-from datetime import date
-import time
+import datetime
 import csv
-today = date.today()
-print(today)
+vandaag = datetime.datetime.today()
+datum = vandaag.strftime("%a %d %b %Y" + ' at ' + "%X")
 #bestand = 'inloggers.csv'
 with open('inloggers.csv', 'w', newline='') as myCSVFile:
     writer = csv.writer(myCSVFile, delimiter=';')
@@ -11,8 +10,12 @@ with open('inloggers.csv', 'w', newline='') as myCSVFile:
         if naam == 'einde':
             break
         voorl = input("Wat zijn je voorletters? ")
+        if voorl == 'einde':
+            break
         gbdatum = input("Wat is je geboortedatum? ")
+        if gbdatum == 'einde':
+            break
         email = input("Wat is je e-mail adres? ")
-        writer.writerow((naam, voorl, gbdatum, email))
-
-#wanneer de volgende persoon inlogt is onbekend, dus schrijf meteen naar file
+        if email == 'einde':
+            break
+        writer.writerow((datum, voorl, naam, gbdatum, email))

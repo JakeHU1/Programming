@@ -3,8 +3,8 @@ def inlezen_beginstation(stations):
     while True:
         beginstation = input('Wat is je beginstation? ')
         for i in stations:
-            if i == beginstation:
-                return beginstation
+            if i.lower() == beginstation.lower():
+                return beginstation.capitalize()
         print('Deze trein komt niet in ' + beginstation)
 
 def inlezen_eindstation(stations, beginstation):
@@ -22,7 +22,8 @@ def inlezen_eindstation(stations, beginstation):
             print('Dit station komt niet voor op dit traject.')
 def omroepen_reis(stations, beginstation, eindstation):
     'Toont de gebruiker de rest van de rit en waar de gebruiker uit moet stappen'
-    print(beginstation + ' is het ' + str(stations.index(beginstation)+1) + 'e station in het traject')
+    print('{} is het {}e station in het traject'.format(beginstation, stations.index(beginstation)+1))
+    #print(beginstation + ' is het ' + str(stations.index(beginstation)+1) + 'e station in het traject')
     print(eindstation + ' is het ' + str(stations.index(eindstation) + 1) + 'e station in het traject')
     print('de afstand bedraagt ' + str(int(stations.index(eindstation) - int(stations.index(beginstation)))) + ' station(s).')
     print('De prijs van het kaartje is ' + str(int(stations.index(eindstation) - int(stations.index(beginstation))) *5) + ' euro.')

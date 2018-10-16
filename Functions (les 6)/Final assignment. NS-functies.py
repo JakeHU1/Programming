@@ -8,12 +8,12 @@ def standaardtarief(afstandKM):
         return 15 + (afstandKM * 0.60)
 
 def ritprijs(leeftijd, weekendrit, afstandKM):
-    'Berekend de totale ritprijs'
-    if bool(weekendrit) == False and (leeftijd < 12 or leeftijd >= 65):
+    'Berekend de totale ritprijs op basis van de drie parameters'
+    if not weekendrit and (leeftijd < 12 or leeftijd >= 65):
         return round((standaardtarief(afstandKM) * 0.7), 2)
-    elif bool(weekendrit) == True and (leeftijd < 12 or leeftijd >= 65):
+    elif weekendrit and (leeftijd < 12 or leeftijd >= 65):
         return round((standaardtarief(afstandKM) * 0.65), 2)
-    elif bool(weekendrit) == True and (leeftijd > 12 or leeftijd <= 65):
+    elif weekendrit and (leeftijd > 12 or leeftijd <= 65):
         return round((standaardtarief(afstandKM) * 0.6), 2)
     else:
         return round((standaardtarief(afstandKM)), 2)
